@@ -10,22 +10,22 @@
     <p>
         <?php
         function sort_2way($array, $order) {
-            if ($order === true) {
+            if ($order) {
+                echo '昇順にソートします。<br>';
                 sort($array);
-            }else
-                rsort($array);
-            foreach ($array as $num) {
-                echo $num . '<br>';
+            }else {
+                echo '降順にソートします。<br>';
+                rsort($array);   
+            }
+            foreach ($array as $nums) {
+                echo $nums . '<br>';
             }
         }
 
-        $num = [15, 4, 18, 23, 10];
+        $nums = [15, 4, 18, 23, 10];
 
-        echo '昇順でソートします。<br>';
-        echo sort_2way($num, true);
-
-        echo '降順でソートします。<br>';
-        echo sort_2way($num, false);
+       echo sort_2way($nums, true);
+       echo sort_2way($nums, false);
         ?>
     </p>
 </body>
